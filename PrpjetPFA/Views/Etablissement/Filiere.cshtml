@@ -1,0 +1,43 @@
+﻿@model Filiere
+@{
+}
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Contenu du programme</th>
+                <th>Debouche</th>
+                <th>Condition d'admission</th>
+                <th>Ecole</th>
+                <th>Universite</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                @foreach (Filiere item in ViewBag.Filieres)
+                {
+                <tr>
+                    <td>@item.Name</td>
+
+                    <td>@item.DescriptionFiliere</td>
+                    <td>@item.ContenuDuProgramme</td>
+                    <td>@item.Debouche</td>
+                    <td>@item.ConditionDadmission</td>
+                    <td>@item.EcolePrive</td>
+                    <td>@item.Faculte</td>
+                    <td>
+                        <a asp-action="DeleteFiliere" asp-route-id="@item.Id" class="btn btn-primary">Supprimer</a>
+                        <a asp-action="EditFiliere" asp-route-id="@item.Id" class="btn btn-secondary">Modifier</a>
+                    </td>
+                </tr>
+                }
+           
+        </tbody>
+    </table>
+    <a asp-action="AjouterFiliere" class="btn btn-primary">Nouveau</a>
+</div>

@@ -1,0 +1,37 @@
+﻿@model EcolePrive
+@{
+}
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Ville </th>
+                <th>Adresse</th>
+                <th>Cout</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (EcolePrive item in ViewBag.Universites)
+                {
+                    <td><img src="~/img/@item.ImageUrl" class="w-100" /></td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Ville</td>
+                    <td>@item.Adresse</td>
+                    <td>@item.CoutETAideFinanciere</td>
+                    <td>
+                        <a asp-action="DeleteEcole" asp-route-id="@item.Id" class="btn btn-primary">Supprimer</a>
+                        <a asp-action="EditEcole" asp-route-id="@item.Id" class="btn btn-secondary">Modifier</a>
+                    </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+    <a asp-action="AjouterEcole" class="btn btn-primary">Nouveau</a>
+</div>

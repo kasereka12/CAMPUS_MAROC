@@ -1,19 +1,10 @@
-﻿using PrpjetPFA.Enum;
-namespace PrpjetPFA.Models
+﻿namespace PrpjetPFA.Models
 {
     public class Etablissement
     {
+        public List<Faculte>? Faculte { get; set; }
         
-        public int Id;
-        public string Name { get; set; }
-
-        public String Ville { get; set; }
-        public String Adresse { get; set; }
-
-        public TypeEtablissement typeEtablissement { get; set; }
-
-        public List<String> Departements { get; set; }
-
-
+        public List<EcolePrive>? EcolePrive { get; set; }
+        
     }
 }

@@ -1,0 +1,57 @@
+﻿@model EcolePrive
+@{
+}
+<form method="post" asp-controller="Etablissement" asp-action="AjouterEcole" class="form">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl" class="control-label"></label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Ville" class="control-label"></label>
+        <input asp-for="Ville" class="form-control" />
+        <span asp-validation-for="Ville" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Adresse" class="control-label"></label>
+        <input asp-for="Adresse" class="form-control" />
+        <span asp-validation-for="Adresse" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AcreditationCertification" class="control-label"></label>
+        <input asp-for="AcreditationCertification" class="form-control" />
+        <span asp-validation-for="AcreditationCertification" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CoutETAideFinanciere" class="control-label"></label>
+        <input asp-for="CoutETAideFinanciere" class="form-control" />
+        <span asp-validation-for="CoutETAideFinanciere" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Critereadmission" class="control-label"></label>
+        <input asp-for="Critereadmission" class="form-control" />
+        <span asp-validation-for="Critereadmission" class="text-danger"></span>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <input type="submit" value="creer" class="btn btn-outline-success float-right">
+        <a class="btn btn-outline-secondary" asp-action="Index">Tout voir</a>
+    </div>
+
+</form>

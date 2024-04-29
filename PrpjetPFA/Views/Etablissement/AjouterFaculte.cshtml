@@ -1,0 +1,49 @@
+﻿@model Universite
+@{
+}
+<form method="post" asp-controller="Etablissement" asp-action="AjouterFaculte" class="form">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label for="Name"  class="control-label">Nom</label>
+        <input name="Name" class="form-control" />
+
+    </div>
+ 
+    <div class="form-group">
+        <label for="Ville" class="control-label">Ville</label>
+        <input name="Ville" class="form-control" />
+   </div>
+    <div class="form-group">
+        <label for="Adresse" class="control-label">Adresse</label>
+        <input name="Adresse" class="form-control" />
+   </div>
+    <div class="form-group">
+        <label for="Critereadmission" class="control-label">Critere</label>
+        <input name="Critereadmission" class="form-control" />
+    </div>
+    <label for="UniversiteId">Choisissez une université :</label>
+    <div class="form-group">
+        <select name="UniversiteId" id="UniversiteId">
+            
+                <option value="">-- Sélectionnez une université --</option>
+                
+            @foreach(Universite item in ViewBag.Universites)
+            {
+                <option value="@item.Id">@item.Name</option>
+                <input type="text" name="Universite" value="@item.Name" hidden/>
+            }
+
+          
+        </select>
+    </div>
+
+
+
+    <div class="form-group">
+        <input type="submit" value="creer" class="btn btn-outline-success float-right">
+        <a class="btn btn-outline-secondary" asp-action="Index">Tout voir</a>
+    </div>
+
+</form>

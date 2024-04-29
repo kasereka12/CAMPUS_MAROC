@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PrpjetPFA.Data;
+using PrpjetPFA.Data.Services;
+using PrpjetPFA.Models;
 
 namespace PrpjetPFA
 {
@@ -17,11 +19,12 @@ namespace PrpjetPFA
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services
-               .AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+               .AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddEntityFrameworkStores<ApplicationDbContext>()
                .AddDefaultUI()
                .AddDefaultTokenProviders();
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IEtablissement , EtablissementService>();
 
             var app = builder.Build();
             using (var scope = app.Services.CreateScope())

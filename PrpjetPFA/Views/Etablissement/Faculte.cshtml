@@ -1,0 +1,37 @@
+﻿@model Faculte
+@{
+}
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Nom</th>
+                <th>Ville </th>
+                <th>Adresse</th>
+                <th>Universite</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+                @foreach (Faculte item in ViewBag.Facultes)
+                {
+                <tr>
+                    <td>@item.Name</td>
+                  
+                    <td>@item.Ville</td>
+                    <td>@item.Adresse</td>
+                    <td>@item.UniversiteId</td>
+                    <td>
+                        <a asp-action="DeleteFaculte" asp-route-id="@item.Id" class="btn btn-primary">Supprimer</a>
+                        <a asp-action="EditFaculte" asp-route-id="@item.Id" class="btn btn-secondary">Modifier</a>
+                    </td>
+                </tr>
+                }
+            
+        </tbody>
+    </table>
+    <a asp-action="AjouterFaculte" class="btn btn-primary">Nouveau</a>
+</div>

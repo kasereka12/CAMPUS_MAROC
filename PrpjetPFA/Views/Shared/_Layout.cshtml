@@ -67,11 +67,11 @@
                     <div class="navbar-nav ms-auto mx-xl-auto p-0">
                         <a  class="nav-item nav-link  text-secondary" asp-controller="Home" asp-action="Index">Bienvenu à campus Maroc</a>
                  
-                        <a href="service.html" class="nav-item nav-link">La vie Au Maroc </a>
-                        <a href="project.html" class="nav-item nav-link">Les etudes </a>
+                        <a asp-controller="Etudes" asp-action="vieAuMaroc" class="nav-item nav-link">La vie Au Maroc </a>
+                        <a asp-controller="Etudes" asp-action="Etudes" class="nav-item nav-link">Les etudes </a>
                 
-                        <a href="about.html" class="nav-item nav-link">Comment s'inscrire'</a>
-                        <a href="about.html" class="nav-item nav-link">Comment demander un Visa </a>
+                        <a asp-controller="Etudes" asp-action="Inscrire" class="nav-item nav-link">Comment s'inscrire</a>
+                        <a asp-controller="Etudes" asp-action="DemandeVisa" class="nav-item nav-link">Comment demander un Visa </a>
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown">
@@ -79,15 +79,15 @@
                                     manage
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" asp-action="Gerer" asp-controller="Headphone">Gerer Université</a>
-                                    <a class="dropdown-item" asp-action="Index" asp-controller="Fabricant">Gerer Users</a>
+                                    <a class="dropdown-item" asp-action="Index" asp-controller="Etablissement">Gerer Université</a>
+                                    <a class="dropdown-item" asp-action="EcoleAll" asp-controller="Etablissement">Gerer Ecole</a>
+                                    <a class="dropdown-item" asp-action="Faculte" asp-controller="Etablissement">Gerer Faculté</a>
+                                    <a class="dropdown-item" asp-action="Filiere" asp-controller="Etablissement">Gerer Filiere</a>
 
                                     <!-- Remplacez "/connexion" par le chemin de votre page de connexion -->
-
                                 </div>
                             </li>
                         }
-                       
                         <partial name="_LoginPartial" />
                     </div>
                 </div>
